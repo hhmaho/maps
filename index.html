@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Tab 1</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Tabs</title>
 </head>
+
 <body>
-
  <div id="tabs">
-   <div>Home</div>
-   <div>About</div>
-   <div>Contact</div>
+   <div data-key="home">Home</div>
+   <div data-key="about">About</div>
+   <div data-key="contact">Contact</div>
  </div>
 
- <div id="content">
-   <div>inhoud van de eerste tab, homepage stuff</div>
-   <div>inhoud van de tweede tab over ons</div>
-   <div>inhoud van de 3e tab , Tel , email...</div>
+ <div id="contents">
+   <div data-key="home">Inhoud van de eerste tab, homepage stuff</div>
+   <div data-key="about">Inhoud van de tweede tab over ons</div>
+   <div data-key="contact">Inhoud van de derde tab 0478 ...</div>
  </div>
+
 
  <script>
-       //Loopen over alle kinderen van het tabs element -1-
-       //overeenkomstige content opzoeken( en uit de DOM halen.) -2-
-       //eventlistener toevoegen aan het kind -3-
-       //dat dan de (eventueel) bestaande contents weer verwijdert -4-
-       //en zijn eigen content toevoegt -5-
+   var activeContent = document.getElementById('contents').firstElementChild
 
-       //-1-
-           var tabs = document.getElementById('tabs')
-   /*2*/   var contents = document.getElementById('content')
-       for (var i = 0; i< tabs.children.length; i = i +1){
-           var tab= tabs.children [i]
-   /*2*/   var content = contents.children [i]
+   function attachTabHandlers(tab, content) {
+     content.style.display = 'none'
+     tab.addEventListener('click', function () {
+       activeContent.style.display = 'none'
+       content.style.display = 'block'
+       activeContent = content
+     })
+   }
 
-       content.style.display = 'none'
-       tab.addEventListener('click', function(){
-           content.style.display = 'block'
-       })
+   function loopOverTabs() {
+     var tabs = document.getElementById('tabs').children
+     var contents = document.getElementById('contents').children
+     for (var i = 0; i < tabs.length; i = i + 1) {
+       var tab = tabs[i]
+       var content = contents[i]
+       attachTabHandlers(tab, content)
+     }
 
-       console.log(i, tab, content)
-       }
+     // laat eerste content weer zien
+     contents[0].style.display = 'block'
+   }
+
+   loopOverTabs()
 
  </script>
-
-
 </body>
+
 </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click me!</button>
+    <script>
+        //var btn =
+        /*btn.style.marginTop = '50px'
+        btn.style.marginLeft = 1 + 'cm'
+        
+        Math.random()*/
+
+        // funtie aanmaken ()
+
+        
+        // ervoor zorgen dat die functie opgeroepen wordt door eventlistener
+        // wanneer we op de button clicken
+
+        var button = document.getElementById('btn')
+        button.addEventListener('mouseover', function() {
+
+        // bereken een random waarde
+            var top = Math.random() *300
+            var left = Math.random() *400
+
+            //console.log(distance)
+        // verplaats de button
+            button.style.marginTop = top + 'px'
+            button.style.marginLeft = left + 'px'
+        })
+
+        button.addEventListener('click', function(){
+            alert('You won!')
+        })
+    </script>
+</body>
+</html>
