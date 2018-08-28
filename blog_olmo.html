@@ -9,8 +9,6 @@
 </head>
 
 <body>
-  
- <div id="viewport"></div>
  <script>
    articles = [
      { title: 'hello world', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a nisi mollis, suscipit dolor nec, laoreet leo. Phasellus bibendum magna risus, quis aliquet enim tincidunt ut. Pellentesque aliquam in ipsum sed finibus. Suspendisse vel sapien id arcu pulvinar pharetra. Etiam pellentesque mi eu orci venenatis, at placerat lectus tempor. Donec ut magna eget odio bibendum blandit sodales sit amet lorem. Aenean sit amet dignissim quam. Mauris pellentesque tellus sed felis porta, a consectetur nulla pulvinar. Donec egestas facilisis enim elementum suscipit. Suspendisse et maximus enim. Pellentesque nibh odio, malesuada sit amet placerat sed, tincidunt et turpis. Cras non ipsum sed justo vulputate ultrices sed et lectus. Duis auctor ac nisl vitae blandit. Cras egestas pretium diam at scelerisque. In at velit lobortis ligula fermentum facilisis ut sit amet lorem.' },
@@ -18,62 +16,34 @@
      { title: 'hello world3', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut enim nunc. Curabitur tincidunt, turpis ac scelerisque sagittis, nunc nibh fringilla odio, sed blandit est mi vel dolor. Vestibulum ullamcorper non velit sit amet faucibus. Mauris ut ultrices ex, quis egestas odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras tristique efficitur tellus nec eleifend.' },
    ]
 
-    // document.createtextNode
+   function renderArticle(article) {
+     var div = document.createElement('div')
+     var h1 = document.createElement('h1')
+     var p = document.createElement('p')
 
-    /*function addTextNode(text) {
-        var article1 = document.createTextNode(title),
-        t1 = document.getElementById("t1");
+     div.appendChild(h1)
+     div.appendChild(p)
 
-        t1.appendChild(article1);
-    }*/
-    // document.createElement
-    // parentNode.appendChild
+     var title = document.createTextNode(article.title)
+     var content = document.createTextNode(article.content)
 
-    function renderArticle(article) {
-        var div = document.createElement ('div')
-        var h1 = document.createElement ('h1')
-        var p = document.createElement ('p')
+     h1.appendChild(title)
+     p.appendChild(content)
 
-        div.appendChild(h1)
-        div.appendChild(p)
+     return div
+   }
 
+   function renderArticles(articles) {
+     var div = document.createElement('div')
+     for (var i = 0; i < articles.length; i = i + 1) {
+       var article = articles[i]
+       var component = renderArticle(article)
+       div.appendChild(component)
+     }
+     return div
+   }
 
-        //h1.appendChild(document.createTextNode('test')) 
-        //test moet uit de article komen
-
-        //*1 var title = document.createTextNode(article.title)
-
-        h1.appendChild(document.createTextNode(article.title))
-        p.appendChild(document.createTextNode(article.content))
-
-        // title text in de h1 zetten
-        // content in de p zetten
-
-        //*1 h1.appendChild(title)
-
-        // ???
-        return div
-        //return <div><h1>...
-
-        //thuis createElement ('img') = url
-    
-    }
-
-        for (var i = 0; i < articles.length; i = i + 1){
-            var article = articles[i]
-            var component = renderArticle(article)
-            document.body.appendChild(component)
-
-        }
-    /*document.body.appendChild(renderArticle(articles[0]))
-    document.body.appendChild(renderArticle(articles[1]))
-    document.body.appendChild(renderArticle(articles[2]))*/
-
-    // correct zou renderArticles in het meervoud zijn en een for loop
-
-    //console.log(renderArticle(articles[0]))
-    //later valt deze lijn (console.log) weg
-
+   document.body.appendChild(renderArticles(articles))
  </script>
 </body>
 
