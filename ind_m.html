@@ -1,0 +1,56 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id= "tabs">
+        <div>Home</div>
+        <div>About</div>
+        <div>Contact</div>
+    </div>
+
+    
+    <div id="contents">
+        <div>Titel van de eerste tab, homepage stuff</div>
+        <div>Inhoud van de tweede tab over ons</div>
+        <div>Inhoud van de derde tab 0148</div>
+    </div>
+
+    <!--<button id="test">test</button>
+        <script>
+        var button = document.getElementById('test')
+        function listener(){
+            alert ('ok')
+        }
+
+        button.addEventListener('click', listener)
+        </script>-->
+
+    <script>
+    //loopen over alle kinderen van het tabs element
+    var tabs = document.getElementById('tabs')
+    for (var i = 0; i < tabs.children.length; i= i + 1) {
+        var tab = tabs.children[i]
+
+
+
+    // overeenkomstige content opzoeken (en uit de dom halen)
+    var content = contents.children[i]
+
+    content.style.display = none
+
+    // listener toevoegen aan het kind
+    // dat dan de (eventueel) bestaande contents weer verwijdert
+    contents.parentNode.removeChild(content)
+    // en zijn eigen content toevoegt
+    console.log(i, tab, content)
+    }
+    </script>
+
+</body>
+</html>-->

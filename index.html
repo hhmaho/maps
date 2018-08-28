@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Tab 1</title>
 </head>
 <body>
-    <div>Home</div>
-    <div>About</div>
-    <div>Contact</div>
-    <div>
-        Titel van de eerste tab
-    </div>
-    <div>
-        Inhoud van de tweede tab
-    </div>
-    <div>
-        Inhoud van de derde tab
-    </div>
+
+ <div id="tabs">
+   <div>Home</div>
+   <div>About</div>
+   <div>Contact</div>
+ </div>
+
+ <div id="content">
+   <div>inhoud van de eerste tab, homepage stuff</div>
+   <div>inhoud van de tweede tab over ons</div>
+   <div>inhoud van de 3e tab , Tel , email...</div>
+ </div>
+
+ <script>
+       //Loopen over alle kinderen van het tabs element -1-
+       //overeenkomstige content opzoeken( en uit de DOM halen.) -2-
+       //eventlistener toevoegen aan het kind -3-
+       //dat dan de (eventueel) bestaande contents weer verwijdert -4-
+       //en zijn eigen content toevoegt -5-
+
+       //-1-
+           var tabs = document.getElementById('tabs')
+   /*2*/   var contents = document.getElementById('content')
+       for (var i = 0; i< tabs.children.length; i = i +1){
+           var tab= tabs.children [i]
+   /*2*/   var content = contents.children [i]
+
+       content.style.display = 'none'
+       tab.addEventListener('click', function(){
+           content.style.display = 'block'
+       })
+
+       console.log(i, tab, content)
+       }
+
+ </script>
+
 
 </body>
 </html>
