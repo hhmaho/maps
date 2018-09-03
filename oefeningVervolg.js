@@ -1,8 +1,12 @@
-langste woord
+/*langste woord
   Geef het langste woord in een lijst terug.
   bvb:
-    longest([ "find", "the", "longest", "word" ]) ==> "longest"
-palindroom
+    longest([ "find", "the", "longest", "word" ]) ==> "longest"*/
+
+function (langsteWoord){
+  
+}
+/*palindroom
   Ga na of een woord een palindroom is.
   bvb:
     palindroom('pap') ==> true
@@ -12,4 +16,5 @@ palindroom
 camelCase
   bvb:
     camelCase([ "create", "text", "node" ]) ==> createTextNode
-    camelCase([ "get", "element", "by", "id" ]) ==> getElementById
+    camelCase([ "get", "element", "by", "id" ]) ==> getElementById*/
+
