@@ -3,9 +3,22 @@
   bvb:
     longest([ "find", "the", "longest", "word" ]) ==> "longest"*/
 
-function (langsteWoord){
+function langsteWoord(t){
+  var woord = t[0];
+  for ( i = 1; i < t.length; i++){
+    var word = t[i]
+    //word.length
+    if (word.length > langsteWoord.length){
+      langsteWoord = word
+    }
+  }
+  return langsteWoord
   
 }
+
+console.log(langsteWoord(["zbn","zogjo"]))
+
+
 /*palindroom
   Ga na of een woord een palindroom is.
   bvb:

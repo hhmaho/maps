@@ -8,7 +8,7 @@ function maxArray(a) {
                 return a[2]
                 } else{
                     return a[3]
-                    } 
+                    }
 }
    
 console.log(maxArray([1, 2, 33, 4])) // ==> 33
